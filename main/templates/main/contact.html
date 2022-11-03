@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Contact me
+{% endblock %}
+
+{% block css_file %}
+    <link rel='stylesheet' href="{% static 'main/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h1 class='title'>Contact me</h1>
+    <div class='contact-form'>
+        <form action='' method='POST'>
+            {% csrf_token %}
+            {% for field in form %}
+                <div class='field'>
+                    <p>{{ field.label_tag }}<p>
+                    {{ field }}
+                    {{ field.error }}
+                </div>
+            {% endfor %}
+            <button role='submit' class='btn btn-dark submit'>Submit</button>
+        </form>
+    </div>
+{% endblock %}

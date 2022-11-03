@@ -1,0 +1,32 @@
+p {
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+
+.title {
+    text-align: center;
+    margin-top: 2%;
+}
+
+#cooking {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+#languages {
+    background-color: black;
+    color: white;
+    padding: 2rem;
+}
+
+#sports {
+    background-color: white;
+    padding: 2rem;
+}
+
+.dish-photo {
+    width: 450px;
+    height: 450px;
+}

@@ -1,0 +1,36 @@
+nav {
+    padding: 0 2rem;
+}
+
+
+/* Footer styling */
+
+footer {
+    display: block;
+    padding: 3% 0 5% 0;
+    background-color: black;
+    color: white;
+    text-align: center;
+    line-height: normal;
+}
+
+.icons {
+    margin-bottom: 2%;
+}
+
+.icon {
+    margin: 3% 2% 2% 2%;
+    color: white;
+}
+
+a.facebook-icon:hover {
+    color: #4267B2;
+}
+
+a.twitter-icon:hover {
+    color: #1DA1F2;
+}
+
+a.instagram-icon:hover {
+    color: #833AB4;
+}

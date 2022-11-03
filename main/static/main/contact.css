@@ -1,0 +1,25 @@
+.title {
+    text-align: center;
+    padding: 1.5rem 0;
+}
+
+.contact-form {
+    text-align: center;
+}
+
+
+.field p { 
+    display: block;
+    font-weight: bold;
+}
+
+.field input, textarea {
+    border: 1px solid;
+    border-radius: 10px;
+    width: 30%;
+}
+
+.submit {
+    width: 25%;
+    text-align: center;
+}

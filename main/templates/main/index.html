@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css_file %}
+    <link rel='stylesheet' href="{% static 'main/index.css' %}">
+{% endblock %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+<div class="homepage">
+    <div class="row">
+        <div class="col-sm-6">
+            <h1>Hi</h1>
+            <h1>I am Aleksandr</h1>
+            <h1>Python Developer</h1>
+            <div class="contact-button">
+                <a class="btn btn-dark btn-lg" href="{% url 'contact_page'%}" role="button">Contact me</a>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <img src="{% static 'main/my-photo.png' %}" alt="Photo of Alex" class="photo">
+        </div>
+    </div>
+</div>
+{% endblock %}

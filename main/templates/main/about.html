@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    About me
+{% endblock %}
+
+{% block css_file %}
+    <link rel='stylesheet' href="{% static 'main/about.css' %}">
+{% endblock %}
+
+{% block content %}
+<h1 class="title">Hey there!</h1>
+<div class="content">
+    <div class="section col-sm-4">
+        <h1>My story</h1>
+        <p>Hi, my name is Alex. I graduated from law academy and I have been working as a Russian and English
+            teacher.
+            It has given me lots of experience of communication with students from all over the world. When I have
+            some
+            spare time, I have been developing my passion with Python.
+        </p>
+    </div>
+    <div class="section col-sm-4">
+        <h1>My skills</h1>
+        <ul>
+        {% for item in skills %}
+            <li>{{ item.skill }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="section col-sm-4">
+        <h1>My education</h1>
+        {% for item in degrees %}
+            <p>{{item.id}}. {{ item.degree }}</p>
+            <p>{{ item.organization }}</p> 
+            <p>{{ item.period }}</p> 
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

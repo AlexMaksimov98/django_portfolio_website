@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    My hobbies
+{% endblock %}
+
+{% block css_file %}
+    <link rel='stylesheet' href="{% static 'main/hobbies.css' %}">
+{% endblock  %}
+
+{% block content %}
+    <h3 class='title'>My hobbies are <a href="#cooking">cooking</a>, <a href="#languages">languages</a> and <a href="#sports">sports</a></h3>
+    <section id='cooking'>
+        <div id='dishes' class='carousel slide' data-bs-ride='carousel'>
+            <div class='carousel-inner'>
+              <div class='carousel-item active' data-bs-interval="2000">
+                <img src='{{ first_dish.photo.url }}' class='dish-photo' alt='{{ first_dish.name }}'>
+              </div>
+              {% for dish in dishes %}
+              <div class='carousel-item' data-bs-interval="2000">
+                <img src='{{ dish.photo.url }}' class='dish-photo' alt='{{ dish.name }}'>
+              </div>
+              {% endfor %}
+              <button class='carousel-control-prev' type='button' data-bs-target='#dishes' data-bs-slide='prev'>
+                <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                <span class='visually-hidden'>Previous</span>
+              </button>
+              <button class='carousel-control-next' type='button' data-bs-target='#dishes' data-bs-slide='next'>
+                <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                <span class='visually-hidden'>Next</span>
+              </button>
+            </div>
+          </div>
+        <div class="cooking-text">
+          <p>I do really love cooking. Cooking is one of my biggest passion. Last year I started to watch different
+            cooking shows and I started to make experiments. Recently I have cooked many delicious dishes :)
+          </p>
+        </div> 
+    </section>
+    <section id='languages'>
+      <h3 class="title">
+        My another hobby is learning languages!
+        <br>
+        I would like to demostrate my language skills as well! :)
+      </h3>
+    </section>
+    <section id='sports'>
+      <h3 class="title">
+        One more hobby of mine is sports
+    </section>
+{% endblock %}
