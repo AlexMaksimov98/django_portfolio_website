@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
-from django.views import View
+from django.views.generic import TemplateView, ListView, FormView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Skill, Degree, Project, Book, Dish
@@ -16,7 +15,10 @@ class AboutPageView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['degrees'] = Degree.objects.all()
-        context['skills'] = Skill.objects.all()
+        context['backend'] = Skill.objects.filter(skill_type__type_of_skill='Backend').all()
+        context['frontend'] = Skill.objects.filter(skill_type__type_of_skill='Frontend').all()
+        context['databases'] = Skill.objects.filter(skill_type__type_of_skill='Databases').all()
+        context['devops'] = Skill.objects.filter(skill_type__type_of_skill='DevOps').all()
         return context
 
 class ProjectsPageView(ListView):
@@ -24,19 +26,11 @@ class ProjectsPageView(ListView):
     model = Project
     context_object_name = 'projects'
 
-class ContactMeView(View):
+class ContactMeView(FormView):
+    template_name = 'main/contact.html'
+    form_class = ContactForm
+    success_url = '/'
     
-    def get(self, request):
-        form = ContactForm()
-        return render(request, 'main/contact.html', {
-            'form': form
-        })
-
-    def post(self, request):
-        form = ContactForm(request.POST)
-        if form.is_valid:
-            form.save()
-        return HttpResponseRedirect(reverse('contact_page'))
 
 class HobbiesView(TemplateView):
     template_name = 'main/hobbies.html'

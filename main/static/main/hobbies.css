@@ -3,15 +3,10 @@ p {
     font-weight: 400;
 }
 
-.title {
-    text-align: center;
-    margin-top: 2%;
-}
-
 #cooking {
     display: flex;
     flex-direction: row;
-    padding: 2rem;
+    padding: 3rem;
     gap: 2rem;
 }
 
@@ -23,10 +18,36 @@ p {
 
 #sports {
     background-color: white;
-    padding: 2rem;
+    padding: 3% 10%;
+}
+
+.cooking-text {
+    padding: 1.2rem;
+}
+
+.title a {
+    text-decoration: none;
+    color: black;
 }
 
 .dish-photo {
     width: 450px;
     height: 450px;
+}
+
+.photo-name {
+    text-align: center;
+    font-size: medium;
+}
+
+.video {
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: white;
+    padding: 4% 2%;
+    margin-top: 2%;
+}
+
+.title a:hover {
+    color: rgb(105, 99, 99);
 }

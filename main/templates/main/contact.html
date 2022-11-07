@@ -15,10 +15,10 @@
         <form action='' method='POST'>
             {% csrf_token %}
             {% for field in form %}
-                <div class='field'>
+                <div class="field {% if field.errors %} errors {% endif %}">
                     <p>{{ field.label_tag }}<p>
                     {{ field }}
-                    {{ field.error }}
+                    {{ field.errors }}      
                 </div>
             {% endfor %}
             <button role='submit' class='btn btn-dark submit'>Submit</button>

@@ -1,16 +1,10 @@
-.title {
-    text-align: center;
-    padding-top: 1.5rem;
-}
-
 .projects {
-    height: 100%;
     padding: 2.5rem;
 }
 
 .project {
     margin-bottom: 1.5rem;
-    padding: 1rem;
+    padding: 2rem;
     border: 2px solid;
     border-radius: 20px;
     box-shadow: 0 2px 8px 0;

@@ -10,16 +10,18 @@
 {% endblock  %}
 
 {% block content %}
-    <h3 class='title'>My hobbies are <a href="#cooking">cooking</a>, <a href="#languages">languages</a> and <a href="#sports">sports</a></h3>
+    <h1 class='title'>My hobbies are <a href="#cooking">cooking</a>, <a href="#languages">languages</a> and <a href="#sports">sports</a></h1>
     <section id='cooking'>
         <div id='dishes' class='carousel slide' data-bs-ride='carousel'>
             <div class='carousel-inner'>
               <div class='carousel-item active' data-bs-interval="2000">
                 <img src='{{ first_dish.photo.url }}' class='dish-photo' alt='{{ first_dish.name }}'>
+                <p class='photo-name'>{{ first_dish.name }}</p>
               </div>
               {% for dish in dishes %}
-              <div class='carousel-item' data-bs-interval="2000">
+              <div class='carousel-item' data-bs-interval="4000">
                 <img src='{{ dish.photo.url }}' class='dish-photo' alt='{{ dish.name }}'>
+                <p class='photo-name'>{{ dish.name }}</p>
               </div>
               {% endfor %}
               <button class='carousel-control-prev' type='button' data-bs-target='#dishes' data-bs-slide='prev'>
@@ -43,10 +45,18 @@
         My another hobby is learning languages!
         <br>
         I would like to demostrate my language skills as well! :)
+        <div class="video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/xKhDE5DMUvE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </h3>
     </section>
     <section id='sports'>
-      <h3 class="title">
-        One more hobby of mine is sports
+      <h3 class="title">Sports</h3>
+        <p>My favorite sport is basketball. I started to play basketball, when I was 9 years old. In total, 
+          I played basketball for 8 years and I took part in a big number of different competitions.
+          <br>
+          <br>
+          When I was in middle and high school, I and my school team won a lot of competitons in running. I have got 
+          a lot of personal awards as well. I still continue running to keep fit :)
     </section>
 {% endblock %}

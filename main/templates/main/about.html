@@ -12,7 +12,7 @@
 {% block content %}
 <h1 class="title">Hey there!</h1>
 <div class="content">
-    <div class="section col-sm-4">
+    <div class="col-sm-4 story">
         <h1>My story</h1>
         <p>Hi, my name is Alex. I graduated from law academy and I have been working as a Russian and English
             teacher.
@@ -21,20 +21,37 @@
             spare time, I have been developing my passion with Python.
         </p>
     </div>
-    <div class="section col-sm-4">
+    <div class="col-sm-4 skills">
         <h1>My skills</h1>
-        <ul>
-        {% for item in skills %}
-            <li>{{ item.skill }}</li>
+        <h3>Backend</h3>
+        <p>
+        {% for i in backend %}
+            {% if not forloop.last %}{{ i }},{% else %}{{ i }}{% endif %}
         {% endfor %}
-        </ul>
+        </p>
+        <h3>Frontend</h3>
+        <p>
+        {% for i in frontend %}
+            {% if not forloop.last %}{{ i }},{% else %}{{ i }}{% endif %}
+        {% endfor %}    
+        </p>
+        <h3>Databases</h3>
+        <p>
+        {% for i in databases %}
+            {% if not forloop.last %}{{ i }},{% else %}{{ i }}{% endif %}
+        {% endfor %}
+        </p>
+        <h3>DevOps</h3>
+        <p>
+        {% for i in devops %}
+            {% if not forloop.last %}{{ i }},{% else %}{{ i }}{% endif %}
+        {% endfor %}
+        </p>
     </div>
-    <div class="section col-sm-4">
+    <div class="col-sm-4 education">
         <h1>My education</h1>
         {% for item in degrees %}
-            <p>{{item.id}}. {{ item.degree }}</p>
-            <p>{{ item.organization }}</p> 
-            <p>{{ item.period }}</p> 
+            <p>{{ item.id }}. {{ item.degree }} from {{ item.organization }} ({{ item.period }})</p>
         {% endfor %}
     </div>
 </div>

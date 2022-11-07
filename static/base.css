@@ -1,9 +1,15 @@
+html, body {
+    width: 100%;
+    max-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+}
+
 nav {
     padding: 0 2rem;
 }
-
-
-/* Footer styling */
 
 footer {
     display: block;
@@ -14,23 +20,8 @@ footer {
     line-height: normal;
 }
 
-.icons {
-    margin-bottom: 2%;
-}
-
-.icon {
-    margin: 3% 2% 2% 2%;
-    color: white;
-}
-
-a.facebook-icon:hover {
-    color: #4267B2;
-}
-
-a.twitter-icon:hover {
-    color: #1DA1F2;
-}
-
-a.instagram-icon:hover {
-    color: #833AB4;
+.title {
+    text-align: center;
+    padding: 1.5rem 0;
+    font-weight: 1000;
 }
