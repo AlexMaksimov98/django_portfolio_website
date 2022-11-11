@@ -10,9 +10,9 @@
 {% endblock %}
 
 {% block content %}
-<h1 class="title">Hey there!</h1>
-<div class="content">
-    <div class="col-sm-4 story">
+<h1 class='title'>Hey there!</h1>
+<div class='content'>
+    <div class='col-sm-4 story'>
         <h1>My story</h1>
         <p>Hi, my name is Alex. I graduated from law academy and I have been working as a Russian and English
             teacher.
@@ -21,7 +21,7 @@
             spare time, I have been developing my passion with Python.
         </p>
     </div>
-    <div class="col-sm-4 skills">
+    <div class='col-sm-4 skills'>
         <h1>My skills</h1>
         <h3>Backend</h3>
         <p>
@@ -48,7 +48,7 @@
         {% endfor %}
         </p>
     </div>
-    <div class="col-sm-4 education">
+    <div class='col-sm-4 education'>
         <h1>My education</h1>
         {% for item in degrees %}
             <p>{{ item.id }}. {{ item.degree }} from {{ item.organization }} ({{ item.period }})</p>

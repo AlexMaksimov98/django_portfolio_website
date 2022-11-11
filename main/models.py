@@ -40,7 +40,8 @@ class Message(models.Model):
     text = models.TextField()
     
     def __str__(self):
-        return f'A message from {self.name}, {self.email}'
+        message = f'A message from {self.name}, {self.email}'
+        return message
     
 
 class Dish(models.Model):

@@ -9,3 +9,11 @@
     border-radius: 20px;
     box-shadow: 0 2px 8px 0;
 }
+
+@media screen and (max-width: 768px) {
+    
+    .projects {
+        padding-top: 0;
+    }
+
+}

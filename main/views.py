@@ -6,7 +6,7 @@ from .models import Skill, Degree, Project, Book, Dish
 from .forms import ContactForm
 
 
-class IndexPageView(TemplateView):
+class IndexPageView(TemplateView):  
     template_name = 'main/index.html'
 
 class AboutPageView(TemplateView):
