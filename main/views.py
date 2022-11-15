@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, ListView, FormView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Skill, Degree, Project, Book, Dish
+from .models import Skill, Degree, Project, Dish
 from .forms import ContactForm
 
 
@@ -26,10 +26,17 @@ class ProjectsPageView(ListView):
     model = Project
     context_object_name = 'projects'
 
+class ThankYouView(TemplateView):
+    template_name = 'main/thank-you.html'
+
 class ContactMeView(FormView):
     template_name = 'main/contact.html'
     form_class = ContactForm
-    success_url = '/'
+    success_url = '/thank-you'
+
+    def form_valid(self, form):
+        form.save()
+        return super().form_valid(form)
     
 
 class HobbiesView(TemplateView):
@@ -39,5 +46,4 @@ class HobbiesView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['first_dish'] = Dish.objects.all()[0]
         context['dishes'] = Dish.objects.all()[1:]
-        context['books'] = Book.objects.all()
         return context

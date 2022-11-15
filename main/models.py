@@ -54,9 +54,6 @@ class Dish(models.Model):
     def __str__(self):
         return self.name    
 
-class Book(models.Model):
-    author = models.CharField(max_length=50)
-    book_title = models.CharField(max_length=50)
 
 
 
